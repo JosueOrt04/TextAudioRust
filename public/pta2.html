@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Precios - Texto a Voz</title>
+    <link rel="stylesheet" href="css/pta2.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">🔊 PLanesJosman</div>
+        <div class="menu"></div>
+    </div>
+
+    <h1 class="title">Elige el plan adecuado para ti</h1>
+    <p class="subtitle">Convierte tu texto en voz natural con nuestro generador de voz IA</p>
+
+    <div class="pricing-container">
+        <div class="plan" onclick="animatePlan(this)">
+            <h3>Gratis</h3>
+            <p class="price">$0</p>
+            <ul class="features">
+                <li>✔ 1000 palabras al día</li>
+                <li>✔ Anuncios</li>
+                <li>✔ Requiere Captcha</li>
+            </ul>
+            <a href="#" class="btn-select" data-id="1">Empezar gratis</a>
+        </div>
+
+        <div class="plan popular" onclick="animatePlan(this)">
+            <span class="popular-badge">Más popular</span>
+            <h3>Básico</h3>
+            <p class="price">$8.99 / mes</p>
+            <ul class="features">
+                <li>✔ 5000 palabras al día</li>
+                <li>✔ Sin captcha</li>
+                <li>✔ Más velocidad</li>
+            </ul>
+            <a href="#" class="btn-select" data-id="2">Elegir plan</a>
+        </div>
+
+        <div class="plan" onclick="animatePlan(this)">
+            <h3>Pro</h3>
+            <p class="price">$29.9 / mes</p>
+            <ul class="features">
+                <li>✔ Sin anuncios</li>
+                <li>✔ Sin captcha</li>
+                <li>✔ Calidad premium</li>
+            </ul>
+            <a href="#" class="btn-select" data-id="3">Elegir plan</a>
+        </div>
+    </div>
+
+    <!-- Modal de Compra -->
+    <div id="paymentModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detalles de Pago</h2>
+            <form id="paymentForm">
+                <label for="name">Nombre en la tarjeta:</label>
+                <input type="text" id="name" required>
+
+                <label for="cardNumber">Número de tarjeta:</label>
+                <div class="card-input">
+                    <input type="text" id="cardNumber" required>
+                    <img id="cardLogo" src="" alt="Tarjeta">
+                </div>
+
+                <label for="expiration">Fecha de vencimiento:</label>
+                <input type="month" id="expiration" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" required>
+
+                <label for="paymentMethod">Método de pago:</label>
+                <select id="paymentMethod" required>
+                    <option value="credit">Tarjeta de Crédito</option>
+                    <option value="debit">Tarjeta de Débito</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+
+                <button type="submit">Confirmar Pago</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mensaje de éxito del pago -->
+    <div id="paymentSuccessMessage" class="success-message" style="display: none;">
+        <p>Tarjeta guardada exitosamente.</p>
+    </div>
+
+    <!-- Mensaje de Éxito -->
+<div id="successMessage" class="success-modal" style="display: none;">
+    <div class="success-content">
+        <h2>🎉 ¡Felicidades!</h2>
+        <p>Has adquirido tu paquete <strong><span id="selectedPlan"></span></strong> exitosamente.</p>
+        <button onclick="closeSuccessMessage()">Aceptar</button>
+    </div>
+</div>
+
+
+    <script src="js/pta2.js"></script>
+</body>
+</html>
