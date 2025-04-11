@@ -1,0 +1,302 @@
+/* FUENTES Y RESET */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+    text-align: center;
+    color: #333;
+}
+
+/* ---------------------- */
+/* CABECERA */
+/* ---------------------- */
+.header {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #4a4fc1;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a4fc1;
+}
+
+/* BOTÓN DE INICIO */
+.btn-login {
+    background: #4a4fc1;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-login:hover {
+    background: #3538a5;
+    transform: scale(1.1);
+}
+
+/* ---------------------- */
+/* TITULOS */
+/* ---------------------- */
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 40px;
+    color: #4a4fc1;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* ---------------------- */
+/* CONTENEDOR DE PLANES */
+/* ---------------------- */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* ---------------------- */
+/* TARJETA DE PLAN */
+/* ---------------------- */
+.plan {
+    background: white;
+    padding: 30px;
+    width: 280px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ETIQUETA "MÁS POPULAR" */
+.popular {
+    position: relative;
+    border: 2px solid #4a4fc1;
+}
+
+.popular-badge {
+    background: #4a4fc1;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-weight: bold;
+}
+
+/* TÍTULO DEL PLAN */
+.plan h3 {
+    font-size: 22px;
+    color: #4a4fc1;
+}
+
+/* PRECIO */
+.plan .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #222;
+}
+
+/* CARACTERÍSTICAS */
+.plan .features {
+    list-style: none;
+    padding: 0;
+}
+
+.plan .features li {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* BOTÓN SELECCIONAR PLAN */
+.btn-select {
+    display: block;
+    margin-top: 15px;
+    background: #4a4fc1;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-select:hover {
+    background: #3538a5;
+}
+
+/* ---------------------- */
+/* RESPONSIVIDAD */
+/* ---------------------- */
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación de apertura */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h2 {
+    color: #4a4fc1;
+}
+
+.modal-content label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Campo de tarjeta con logo */
+.card-input {
+    position: relative;
+}
+
+.card-input input {
+    padding-right: 40px;
+}
+
+.card-input img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+}
+
+/* Botón de pago */
+.modal-content button {
+    width: 100%;
+    background: #4a4fc1;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.modal-content button:hover {
+    background: #3538a5;
+    transform: scale(1.05);
+}
+
+/* Mensaje de Éxito */
+.success-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-content {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-content h2 {
+    color: #4a4fc1;
+    font-size: 24px;
+}
+
+.success-content p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.success-content button {
+    background: #4a4fc1;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.success-content button:hover {
+    background: #3538a5;
+}
+
+/* Asegurar que el modal esté oculto al inicio */
+.modal {
+    display: none;
+}
+
+.success-modal {
+    display: none;
+}
+
+

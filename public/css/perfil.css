@@ -1,0 +1,184 @@
+/* ESTILOS GENERALES */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+/* CABECERA MEJORADA */
+.header {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 22px;
+    color: white;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* BOTÓN DE CERRAR SESIÓN */
+.btn-logout {
+    background: #ff4c4c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-logout:hover {
+    background: #c0392b;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.profile-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FOTO DE PERFIL */
+.profile-pic {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic img:hover {
+    transform: scale(1.05);
+}
+
+/* OCULTAR INPUT DE ARCHIVO */
+.profile-pic input {
+    display: none;
+}
+
+/* BOTÓN DE SUBIR FOTO COMO ICONO */
+.upload-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #4a4fc1;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+.upload-icon:hover {
+    background: #3538a5;
+}
+
+/* FORMULARIO */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+    color: white;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    text-align: center;
+}
+
+form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+form button {
+    background: #4a4fc1;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #3538a5;
+}
+
+/* RESPONSIVIDAD */
+@media (max-width: 480px) {
+    .profile-container {
+        width: 90%;
+    }
+}

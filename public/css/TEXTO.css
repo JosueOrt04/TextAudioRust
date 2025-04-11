@@ -1,0 +1,389 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Estilos del header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Estilos de la sección principal */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.highlight {
+    color: #6a5acd;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.primary-btn {
+    background: #6a5acd;
+    color: #fff;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid #6a5acd;
+    color: #6a5acd;
+}
+
+/* Contenedor principal */
+.tts-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Estilos de las pestañas */
+.tabs {
+    display: flex;
+    justify-content: center;
+}
+
+.tabs button {
+    padding: 10px 15px;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tabs .active {
+    background: #6a5acd;
+    color: white;
+}
+
+/* Área de texto */
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+/* Botón para subir archivos */
+#upload-btn, #generate-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#upload-btn {
+    background: #8a2be2;
+    color: white;
+}
+
+#generate-btn {
+    background: linear-gradient(90deg, #6a5acd, #8a2be2);
+    color: white;
+}
+
+#upload-btn:hover, #generate-btn:hover {
+    opacity: 0.8;
+}
+
+/* Sección de características */
+.features {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+    color: #6a5acd;
+}
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .tts-container {
+        padding: 10px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+}
+
+/* MODAL ESTILOS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    animation: fadeInModal 0.5s ease-out;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    animation: slideInModal 0.5s ease-out;
+    position: relative; /* Para asegurar que la X esté dentro del modal */
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #6a5acd; /* Color morado para la X */
+    background: transparent;
+    border: none;
+}
+
+/* Animación para el modal de "Más información" */
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInModal {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Estilos para la pestaña activa */
+.active-tab {
+    background-color: #6a5acd !important;
+    color: white !important;
+}
+
+/* Estilos para la zona de arrastrar y soltar archivos */
+#drop-area {
+    border: 2px dashed #6a5acd;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#drop-area:hover {
+    background-color: #f0f0f0;
+}
+
+/* Animación para el cuadro emergente */
+#file-preview {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Fondo oscuro cuando se muestra el preview */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Estilo de los botones morados (Borrar texto y Examinar) */
+#clear-text, #file-input {
+    background: #8a2be2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#clear-text:hover, #file-input:hover {
+    background: #6a1b9a;
+}
+
+/* Botón "Más información" */
+.secondary-btn {
+    background: transparent;
+    border: 2px solid #8a2be2;
+    color: #8a2be2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    background: #8a2be2;
+    color: white;
+}
+
+
+.logo img {
+    max-width: 75px;
+    height: auto;
+}
+
+#penguin-animation {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#penguin-animation img {
+    width: 100px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+
+/*el  convertir texto audio */
+.audio-container {
+    display: none;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+#audio-player {
+    width: 100%;
+    outline: none;
+    border-radius: 8px;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
